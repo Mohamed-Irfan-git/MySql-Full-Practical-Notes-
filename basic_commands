@@ -1,0 +1,35 @@
+1) CREATE DATABASE bdname;
+
+2) CREARE TABLE tablename;  // you can not create like this because that is expecting from us atleast one column
+   CREATE TABLE tablename(
+     id INT PRIMARY KEY NOT NULL,
+     name VARCHAR(255) NOT NULL
+   );
+   
+3) INSERT into tablename
+   (id,name)
+   values(1,'user');
+   
+4) Modiy table column
+    1)ALTER TABLE tablename ADD COLUMN age INT NOT NULL;  // add new coulmn to that table;
+    2)ALTER TABLE tablename MODIFY COLUMN age VARCHAR(3); // change that coulmn data type
+    3) ALTER TABLE tablename CHANGE COLUMN id userId INT NOT NULL PRIMARY KEY; // change column name
+    4)ALTER TABLE tablename DROP COLUMN age; // remove table's column 
+  
+4) SELECT * FROM tablename; // it will display full table 
+
+5) SELECT id from tablename // this will display that specific colimn only 
+
+6) UPDATE TABLE tablename
+   set name = 'irfan'
+   WHERE userID =1;   //this will change user to irfan
+   
+7) DELETE FROM tablename id = 1; // delete row
+
+8) CREATE TABLE new_table LIKE existing_table; // very very important it will create another table with same structure
+
+9) CREATE TABLE new_table AS
+  SELECT * FROM existing_table;  // this command copy all data into new table without struture i mean primary key , not null like those constrains not included
+  
+
+   
