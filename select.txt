@@ -1,0 +1,10 @@
+//some must needed select commands
+
+1) SELECT * FROM student;
+2) SELECT * FROM student WHERE age = 22;
+3) SELECT * FROM student WHERE id>25 AND gender='M';
+4) SELECT name , age FROM student WHERE gender='F';
+5) SELECT *  FROM student WHERE name LIKE 'mo%'; // very very important if we put % mark last of this word it check that word first letter by letter
+6) SELECT *  FROM student WHERE name LIKE '%mo'; // same but last to first
+7) SELECT id AS 'studentId' FROM student; // when showing table name it show studentID instead of id
+
