@@ -1,0 +1,23 @@
+//Creating user
+
+
+1) CREATE USER 'user'@'localhost' IDENTIFIED BY 'User#123';
+   Query OK, 0 rows affected (0.02 sec)
+   
+2)  //Giving permission
+   GRANT ALL PRIVILAGES ON userdb.* TO 'user'@'localhost'; //can access that particular database only
+   GRANT ALL PRIVILAGES ON *.* TO 'user'@'localhost' WITH GRANT OPTION; // can access all databases;
+   GRANT SELECT,INSERT,UPDATE ON userdb.* TO 'user'@'localhost'//user can perform this operations only
+   
+3) //Apply Changes
+   FlUSH PRIVILAGES;
+   
+ //Verification
+ 
+ 
+ 1.mysql -u user -p // after enter and enter correct password
+ 2.SHOW DATABASES;// you can see your permitted databases;
+   
+   
+
+
