@@ -14,3 +14,36 @@ Query OK, 0 rows affected (0.12 sec)
 
 WE CAN SEE HERE USING FORIEGN KEY HOW CAN I GET DATA COMBINE BOTH OF THEM
 
+1)SELECT student.S_NAME , subject.CREDIT , subject.SUB_NAME
+ FROM student, subject 
+ WHERE student.S_ID=subject.S_ID;  // mapping part but everything is same apart fromt this 
+
++----------------------+--------+--------------------+
+| S_NAME               | CREDIT | SUB_NAME           |
++----------------------+--------+--------------------+
+| Irfan Mohamed        |   3.00 | Mathematics        |
+| Irfan Mohamed        |   4.00 | Physics            |
+| Ayesha Perera        |   4.00 | Science            |
+| Ayesha Perera        |   3.50 | Chemistry          |
+| Ruwan Silva          |   2.50 | English            |
+| Ruwan Silva          |   3.00 | Biology            |
+| Nadeesha Fernando    |   3.50 | History            |
+| Nadeesha Fernando    |   4.00 | Computer Science   |
+| Kamal Wickramasinghe |   3.00 | Geography          |
+| Kamal Wickramasinghe |   2.50 | Art                |
+| Sanduni Rajapaksa    |   3.00 | Economics          |
+| Chathura Jayasinghe  |   3.50 | Accounting         |
+| Himali Gunasekara    |   2.00 | Music              |
+| Praveen Senanayake   |   1.50 | Physical Education |
+| Dilani Perera        |   2.50 | Drama              |
+| Nimal Fernando       |   3.00 | Psychology         |
+| Yasodha Silva        |   3.50 | Sociology          |
+| Ravindra Wijesinghe  |   3.00 | Philosophy         |
+| Shanika Fernando     |   4.00 | English Literature |
+| Kavinda Perera       |   3.50 | Political Science  |
++----------------------+--------+--------------------+
+
+
+
+
+
