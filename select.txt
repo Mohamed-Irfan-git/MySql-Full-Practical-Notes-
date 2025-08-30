@@ -7,4 +7,167 @@
 5) SELECT *  FROM student WHERE name LIKE 'mo%'; // very very important if we put % mark last of this word it check that word first letter by letter
 6) SELECT *  FROM student WHERE name LIKE '%mo'; // same but last to first
 7) SELECT id AS 'studentId' FROM student; // when showing table name it show studentID instead of id
+8)SELECT * FROM student where AGE>21 AND GENDER='Female';
++------+-------------------+--------+-----+-------------------------+
+| S_ID | S_NAME            | GENDER | AGE | ADDRESS                 |
++------+-------------------+--------+-----+-------------------------+
+|    4 | Nadeesha Fernando | Female |  22 | 12 Ocean Drive, Jaffna  |
+|   16 | Chamila Rajapaksa | Female |  22 | 88 Main Street, Colombo |
++------+-------------------+--------+-----+-------------------------+
+
+9)  SELECT * FROM student WHERE AGE>21 AND GENDER='Male';
++------+---------------------+--------+-----+-------------------------+
+| S_ID | S_NAME              | GENDER | AGE | ADDRESS                 |
++------+---------------------+--------+-----+-------------------------+
+|    7 | Chathura Jayasinghe | Male   |  23 | 89 Garden Street, Kandy |
+|   11 | Nimal Fernando      | Male   |  22 | 11 Palm Street, Jaffna  |
+|   17 | Asela Silva         | Male   |  23 | 12 Hill Lane, Galle     |
++------+---------------------+--------+-----+-------------------------+
+
+10)  SELECT * FROM student WHERE AGE>21 OR GENDER='Male';  // in here both are can not be false 
++------+----------------------+--------+-----+--------------------------+
+| S_ID | S_NAME               | GENDER | AGE | ADDRESS                  |
++------+----------------------+--------+-----+--------------------------+
+|    1 | Irfan Mohamed        | Male   |  20 | 123 Main Street, Colombo |
+|    3 | Ruwan Silva          | Male   |  21 | 78 River Lane, Galle     |
+|    4 | Nadeesha Fernando    | Female |  22 | 12 Ocean Drive, Jaffna   |
+|    5 | Kamal Wickramasinghe | Male   |  18 | 56 Hill Street, Matara   |
+|    7 | Chathura Jayasinghe  | Male   |  23 | 89 Garden Street, Kandy  |
+|    9 | Praveen Senanayake   | Male   |  19 | 67 Riverfront, Colombo   |
+|   11 | Nimal Fernando       | Male   |  22 | 11 Palm Street, Jaffna   |
+|   13 | Ravindra Wijesinghe  | Male   |  21 | 77 River Lane, Colombo   |
+|   15 | Kavinda Perera       | Male   |  20 | 56 Lake Street, Matara   |
+|   16 | Chamila Rajapaksa    | Female |  22 | 88 Main Street, Colombo  |
+|   17 | Asela Silva          | Male   |  23 | 12 Hill Lane, Galle      |
+|   19 | Tharindu Wijesinghe  | Male   |  19 | 34 Ocean Drive, Matara   |
++------+----------------------+--------+-----+--------------------------+
+
+
+11) SELECT * FROM student WHERE NOT AGE>20;  // 20 and under 20 age every student 
++------+----------------------+--------+-----+--------------------------+
+| S_ID | S_NAME               | GENDER | AGE | ADDRESS                  |
++------+----------------------+--------+-----+--------------------------+
+|    1 | Irfan Mohamed        | Male   |  20 | 123 Main Street, Colombo |
+|    2 | Ayesha Perera        | Female |  19 | 45 Lake Road, Kandy      |
+|    5 | Kamal Wickramasinghe | Male   |  18 | 56 Hill Street, Matara   |
+|    6 | Sanduni Rajapaksa    | Female |  20 | 34 Park Avenue, Colombo  |
+|    9 | Praveen Senanayake   | Male   |  19 | 67 Riverfront, Colombo   |
+|   10 | Dilani Perera        | Female |  20 | 90 Hilltop Lane, Matara  |
+|   12 | Yasodha Silva        | Female |  18 | 44 Ocean Avenue, Galle   |
+|   14 | Shanika Fernando     | Female |  19 | 33 Garden Road, Kandy    |
+|   15 | Kavinda Perera       | Male   |  20 | 56 Lake Street, Matara   |
+|   19 | Tharindu Wijesinghe  | Male   |  19 | 34 Ocean Drive, Matara   |
+|   20 | Nadeesha Perera      | Female |  20 | 90 Park Avenue, Colombo  |
++------+----------------------+--------+-----+--------------------------+
+11 rows in set (0.00 sec)
+
+
+12) mysql> SELECT * FROM student WHERE S_NAME LIKE '%e';// if name finsing with e letter then it show those record
++------+----------------------+--------+-----+-------------------------+
+| S_ID | S_NAME               | GENDER | AGE | ADDRESS                 |
++------+----------------------+--------+-----+-------------------------+
+|    5 | Kamal Wickramasinghe | Male   |  18 | 56 Hill Street, Matara  |
+|    7 | Chathura Jayasinghe  | Male   |  23 | 89 Garden Street, Kandy |
+|    9 | Praveen Senanayake   | Male   |  19 | 67 Riverfront, Colombo  |
+|   13 | Ravindra Wijesinghe  | Male   |  21 | 77 River Lane, Colombo  |
+|   19 | Tharindu Wijesinghe  | Male   |  19 | 34 Ocean Drive, Matara  |
++------+----------------------+--------+-----+-------------------------+
+5 rows in set (0.00 sec)
+
+13)SELECT * FROM student WHERE AGE IN(20,19); // using this command we can select according to the our specification
++------+---------------------+--------+-----+--------------------------+
+| S_ID | S_NAME              | GENDER | AGE | ADDRESS                  |
++------+---------------------+--------+-----+--------------------------+
+|    1 | Irfan Mohamed       | Male   |  20 | 123 Main Street, Colombo |
+|    2 | Ayesha Perera       | Female |  19 | 45 Lake Road, Kandy      |
+|    6 | Sanduni Rajapaksa   | Female |  20 | 34 Park Avenue, Colombo  |
+|    9 | Praveen Senanayake  | Male   |  19 | 67 Riverfront, Colombo   |
+|   10 | Dilani Perera       | Female |  20 | 90 Hilltop Lane, Matara  |
+|   14 | Shanika Fernando    | Female |  19 | 33 Garden Road, Kandy    |
+|   15 | Kavinda Perera      | Male   |  20 | 56 Lake Street, Matara   |
+|   19 | Tharindu Wijesinghe | Male   |  19 | 34 Ocean Drive, Matara   |
+|   20 | Nadeesha Perera     | Female |  20 | 90 Park Avenue, Colombo  |
++------+---------------------+--------+-----+--------------------------+
+
+14)  SELECT * 
+    -> FROM student 
+    -> WHERE S_ID IN (1, 3, 5); // actually using this command we are instantly checking those records. Most common this only enough most of the time
++------+----------------------+--------+-----+--------------------------+
+| S_ID | S_NAME               | GENDER | AGE | ADDRESS                  |
++------+----------------------+--------+-----+--------------------------+
+|    1 | Irfan Mohamed        | Male   |  20 | 123 Main Street, Colombo |
+|    3 | Ruwan Silva          | Male   |  21 | 78 River Lane, Galle     |
+|    5 | Kamal Wickramasinghe | Male   |  18 | 56 Hill Street, Matara   |
++------+----------------------+--------+-----+--------------------------+
+3 rows in set (0.00 sec)
+
+15)mysql> SELECT S_NAME, AGE
+    -> FROM student
+    -> WHERE S_ID IN (
+    ->     SELECT S_ID
+    ->     FROM subject
+    ->     WHERE CREDIT > 3
+    -> ); // It giving more then 3 cgpa student name its search in subject table using S_ID
++---------------------+-----+
+| S_NAME              | AGE |
++---------------------+-----+
+| Ayesha Perera       |  19 |
+| Nadeesha Fernando   |  22 |
+| Irfan Mohamed       |  20 |
+| Chathura Jayasinghe |  23 |
+| Yasodha Silva       |  18 |
+| Shanika Fernando    |  19 |
+| Kavinda Perera      |  20 |
++---------------------+-----+
+
+16) SELECT * from student ORDER BY age;
++------+----------------------+--------+-----+--------------------------+
+| S_ID | S_NAME               | GENDER | AGE | ADDRESS                  |
++------+----------------------+--------+-----+--------------------------+
+|    5 | Kamal Wickramasinghe | Male   |  18 | 56 Hill Street, Matara   |
+|   12 | Yasodha Silva        | Female |  18 | 44 Ocean Avenue, Galle   |
+|    2 | Ayesha Perera        | Female |  19 | 45 Lake Road, Kandy      |
+|   19 | Tharindu Wijesinghe  | Male   |  19 | 34 Ocean Drive, Matara   |
+|   14 | Shanika Fernando     | Female |  19 | 33 Garden Road, Kandy    |
+|    9 | Praveen Senanayake   | Male   |  19 | 67 Riverfront, Colombo   |
+|   20 | Nadeesha Perera      | Female |  20 | 90 Park Avenue, Colombo  |
+|    1 | Irfan Mohamed        | Male   |  20 | 123 Main Street, Colombo |
+|   15 | Kavinda Perera       | Male   |  20 | 56 Lake Street, Matara   |
+|   10 | Dilani Perera        | Female |  20 | 90 Hilltop Lane, Matara  |
+|    6 | Sanduni Rajapaksa    | Female |  20 | 34 Park Avenue, Colombo  |
+|    8 | Himali Gunasekara    | Female |  21 | 22 Lake View Road, Galle |
+|   13 | Ravindra Wijesinghe  | Male   |  21 | 77 River Lane, Colombo   |
+|   18 | Dilusha Gunasekara   | Female |  21 | 45 Riverfront, Kandy     |
+|    3 | Ruwan Silva          | Male   |  21 | 78 River Lane, Galle     |
+|   11 | Nimal Fernando       | Male   |  22 | 11 Palm Street, Jaffna   |
+|   16 | Chamila Rajapaksa    | Female |  22 | 88 Main Street, Colombo  |
+|    4 | Nadeesha Fernando    | Female |  22 | 12 Ocean Drive, Jaffna   |
+|    7 | Chathura Jayasinghe  | Male   |  23 | 89 Garden Street, Kandy  |
+|   17 | Asela Silva          | Male   |  23 | 12 Hill Lane, Galle      |
++------+----------------------+--------+-----+--------------------------+
+20 rows in set (0.00 sec)
+
+17)SELECT * FROM student WHERE AGE BETWEEN 20 AND 21;
++------+---------------------+--------+-----+--------------------------+
+| S_ID | S_NAME              | GENDER | AGE | ADDRESS                  |
++------+---------------------+--------+-----+--------------------------+
+|    1 | Irfan Mohamed       | Male   |  20 | 123 Main Street, Colombo |
+|    3 | Ruwan Silva         | Male   |  21 | 78 River Lane, Galle     |
+|    6 | Sanduni Rajapaksa   | Female |  20 | 34 Park Avenue, Colombo  |
+|    8 | Himali Gunasekara   | Female |  21 | 22 Lake View Road, Galle |
+|   10 | Dilani Perera       | Female |  20 | 90 Hilltop Lane, Matara  |
+|   13 | Ravindra Wijesinghe | Male   |  21 | 77 River Lane, Colombo   |
+|   15 | Kavinda Perera      | Male   |  20 | 56 Lake Street, Matara   |
+|   18 | Dilusha Gunasekara  | Female |  21 | 45 Riverfront, Kandy     |
+|   20 | Nadeesha Perera     | Female |  20 | 90 Park Avenue, Colombo  |
++------+---------------------+--------+-----+--------------------------+
+
+
+
+
+
+
+
+
+
 

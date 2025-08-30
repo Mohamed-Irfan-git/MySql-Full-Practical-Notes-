@@ -1,0 +1,16 @@
+ADD FOREIGN KEY
+
+mysql> CREATE TABLE subject (
+    -> 
+    -> SUB_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    -> SUB_NAME VARCHAR(255) NOT NULL,
+    -> CREDIT DECIMAL(4,2) NOT NUll,
+    -> S_ID INT NOT NULL,
+    -> FOREIGN KEY (S_ID) REFERENCES student(S_ID)); // in here that S_ID one is from student table one is this table 
+       //finally we make rlationship between them using foreign kwy
+Query OK, 0 rows affected (0.12 sec)
+
+
+
+WE CAN SEE HERE USING FORIEGN KEY HOW CAN I GET DATA COMBINE BOTH OF THEM
+
