@@ -1,0 +1,23 @@
+// there is a some usefull function to handle string
+
+1.LENGTH()
+2.UPPER()
+3.LOWER()
+4.CONCAT()
+5.SUBSTRING()
+6.TRIM()
+7.RTRIM()
+8.LTRIM()
+9.LPAD() // left padding 
+10.REPLACE()
+11.INSTR()
+12.LEFT(),RIGHT()
+13.FORMAT()
+
+
+
+// sub queries
+
+
+
+

@@ -1,0 +1,113 @@
+🔹 Types of Window Functions
+1. Aggregate Window Functions
+
+Aggregate functions used with OVER() instead of GROUP BY.
+
+SUM()
+
+AVG()
+
+MIN()
+
+MAX()
+
+COUNT()
+
+Example:
+
+SELECT 
+    department,
+    name,
+    salary,
+    SUM(salary) OVER (PARTITION BY department) AS total_dept_salary
+FROM Employees;
+
+
+👉 Shows each employee’s salary + total salary of their department.
+
+2. Ranking Functions
+
+Used to assign ranks/numbers to rows.
+
+ROW_NUMBER() → Unique sequence number per row.
+
+RANK() → Gives same rank for ties, skips next rank.
+
+DENSE_RANK() → Same rank for ties, but no gaps.
+
+NTILE(n) → Splits rows into n groups.
+
+Example:
+
+SELECT 
+    name,
+    salary,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num,
+    RANK() OVER (ORDER BY salary DESC) AS rank,
+    DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank,
+    NTILE(3) OVER (ORDER BY salary DESC) AS bucket
+FROM Employees;
+
+3. Value Window Functions
+
+Return specific row values relative to the current row.
+
+LEAD() → Get value from the next row.
+
+LAG() → Get value from the previous row.
+
+FIRST_VALUE() → First value in the window.
+
+LAST_VALUE() → Last value in the window.
+
+Example:
+
+SELECT 
+    name,
+    salary,
+    LAG(salary) OVER (ORDER BY salary) AS prev_salary,
+    LEAD(salary) OVER (ORDER BY salary) AS next_salary
+FROM Employees;
+
+
+👉 Compare each employee’s salary with the one before and after.
+
+4. Analytic Functions
+
+Some databases include:
+
+PERCENT_RANK() → Relative rank (0–1).
+
+CUME_DIST() → Cumulative distribution.
+
+NTH_VALUE() → Nth value in the window.
+
+Example:
+
+SELECT 
+    name,
+    salary,
+    PERCENT_RANK() OVER (ORDER BY salary) AS percent_rank,
+    CUME_DIST() OVER (ORDER BY salary) AS cumulative_distribution
+FROM Employees;
+
+🔹 Window Function Structure
+
+General syntax:
+
+function_name(column) 
+OVER (
+    PARTITION BY column(s)   -- divide data into groups
+    ORDER BY column(s)       -- define row order
+    ROWS BETWEEN ...         -- (optional) window frame
+)
+
+✅ Summary of Window Function Types
+
+Aggregate → SUM, AVG, COUNT (over partitions)
+
+Ranking → ROW_NUMBER, RANK, DENSE_RANK, NTILE
+
+Value → LEAD, LAG, FIRST_VALUE, LAST_VALUE
+
+Analytic/Distribution → PERCENT_RANK, CUME_DIST, NTH_VALUE

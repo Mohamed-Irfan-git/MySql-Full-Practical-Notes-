@@ -1,0 +1,7 @@
+//Joins
+
+INNER JOIN	Only matches between both tables
+LEFT JOIN	All rows from left + matches from right
+RIGHT JOIN	All rows from right + matches from left
+FULL JOIN	All rows from both (matches + non-matches)
+CROSS JOIN	Every possible combination

@@ -1,0 +1,13 @@
+NOT NULL → no empty values
+
+UNIQUE → all values must be different
+
+PRIMARY KEY → unique + not null (row identifier)
+
+FOREIGN KEY → maintains relationship between tables
+
+CHECK → validates conditions
+
+DEFAULT → gives a default value
+
+AUTO_INCREMENT → auto-generate value
